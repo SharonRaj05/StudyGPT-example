@@ -47,7 +47,7 @@ def get_rag_chain():
     llm = HuggingFaceHub(
         repo_id="google/flan-t5-large",
         task="text-generation",
-        model_kwargs={"temperature": 0.2, "max_length": 512}
+        model_kwargs={"temperature": 0.2, "max_length": 1020}
     )
     qa = RetrievalQA.from_chain_type(llm=llm, retriever=retriever, return_source_documents=False)
     return qa
